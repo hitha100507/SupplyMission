@@ -86,13 +86,18 @@ function draw() {
 function keyPressed(){
 	if(keyCode === LEFT_ARROW){
        helicopterSprite.x = helicopterSprite.x-10;
-	}
+	   packageSprite.x = packageSprite.x-10;
+	   packageBody,{x:-10, y:0};
+    }
 
 	if(keyCode === RIGHT_ARROW){
 	   helicopterSprite.x = helicopterSprite.x+10;
+	   packageSprite.x = packageSprite.x+10;
+	   packageBody,{x:+10, y:0};
 	}
 
 	if(keyCode === DOWN_ARROW){
 	   packageSprite.y = packageSprite.y-10;
+       Matter.Body.setStatic(packageBody, false);
 	}
 }
